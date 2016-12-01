@@ -1,0 +1,23 @@
+<div id="root"></div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Documento</th>
+        <th>Tipo</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(users.result, function (user) { %>
+    <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.document %></td>
+        <td><%= user.typePerson === 'F' ? 'Pessoa física' : 'Pessoa jurídica' %></td>
+        <td><%= user.status ? 'Ativo' : 'Inativo' %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
